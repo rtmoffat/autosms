@@ -14,11 +14,19 @@ public class BootReceiver extends BroadcastReceiver {
     
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (intent.getAction() != null && 
-            intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
-            Log.d(TAG, "Device booted - Auto SMS settings will be loaded when SMS is received");
-            // Settings are stored in SharedPreferences and will be automatically
-            // loaded when SmsReceiver processes incoming messages
+        // Verify intent action to prevent improper intent handling
+        if (intent == null || intent.getAction() == null) {
+            Log.w(TAG, "Received null intent or action");
+            return;
         }
+        
+        if (!Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+            Log.w(TAG, "Received unexpected action: " + intent.getAction());
+            return;
+        }
+        
+        Log.d(TAG, "Device booted - Auto SMS settings will be loaded when SMS is received");
+        // Settings are stored in SharedPreferences and will be automatically
+        // loaded when SmsReceiver processes incoming messages
     }
 }
