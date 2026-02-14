@@ -24,6 +24,9 @@
         </activity>
 
         <!-- BroadcastReceiver for SMS -->
+        <!-- High priority (999) ensures auto-response can process messages quickly.
+             Note: This priority should be used carefully as it may interfere with other SMS apps.
+             Users should ensure this is their intended behavior. -->
         <receiver
             android:name=".SmsReceiver"
             android:enabled="true"

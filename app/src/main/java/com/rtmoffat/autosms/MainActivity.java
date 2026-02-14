@@ -48,12 +48,7 @@ public class MainActivity extends AppCompatActivity {
         loadSettings();
         
         // Set up save button
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveSettings();
-            }
-        });
+        btnSave.setOnClickListener(v -> saveSettings());
         
         // Request permissions
         requestSmsPermissions();
