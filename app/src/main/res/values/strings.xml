@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Auto SMS</string>
+    <string name="app_title">SMS Auto Responder</string>
+    <string name="app_description">Automatically respond to SMS messages based on keywords</string>
+    <string name="enable_auto_response">Enable Auto Response</string>
+    <string name="trigger_keyword_hint">Trigger Keyword (e.g., "help", "info")</string>
+    <string name="response_message_hint">Response Message</string>
+    <string name="save_settings">Save Settings</string>
+    <string name="info_text">When enabled, any SMS containing the trigger keyword will receive an automatic response. Works even when device is locked.</string>
+</resources>
